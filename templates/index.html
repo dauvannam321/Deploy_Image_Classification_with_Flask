@@ -1,0 +1,33 @@
+<html> 
+
+<head>
+<title>Image classification Model as a Flask API</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .center {
+        text-align: center; /* Căn giữa theo chiều ngang */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Căn giữa theo chiều dọc */
+        height: 100h; /* Để trung tâm theo chiều dọc trang web */
+    }
+  </style>
+</head>
+
+<body>
+    <div class="center">
+        <h1>Images classification (DOG or CAT)</h1>
+    
+        <form action="/predict" method="post" enctype="multipart/form-data">
+          <input type="file" name="image" value="Upload">
+          <input type="submit" value="Predict"> {% if label %} {{ label }} {% endif %}
+        </form>
+    
+        <img src="{{ uploaded_image }}">
+    </div>
+
+</body>
+
+</html>
